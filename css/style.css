@@ -1,27 +1,7 @@
 @charset "UTF-8";
-/*========	Table of Css Content ==========*/
-/* Typography */
-/* Normalize  */
-/* Global style */
-/* Breadcrumb Area Start */
-/* Main Menu Area Start */
-/* Home area Start */
-/* About area Start */
-/* Counter Area Start */
-/* My service Start */
-/* Resume Area Start*/
-/* My Client Area Start */
-/*Portfolio Area Strat */
-/* Testimonial Start */
-/* Pricing Area Start */
-/* Blog Area Start */
-/* Contact Area Start */
-/* 
-=============================
- */
-/* Typography */
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Poppins:400,500,600,700&amp;display=swap");
-/* Normalize  */
+
 html {
   font-family: "Open Sans", sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -43,6 +23,7 @@ body.modal-open {
 }
 
 h1 {
+  font-family: "Open Sans", sans-serif;
   font-size: 60px;
   line-height: 1.0833333333;
 }
