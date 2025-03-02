@@ -21,12 +21,41 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/multicolor.css">
         <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
-       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
     </head>
 
 <body>
+
+    <style type="text/css">
+        .buttons {
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            background: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .buttons button:hover {
+            background: #45a049;
+        }
+        .hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+            position: absolute;
+        }
+    </style>
     
     <div class="sequence">
   
@@ -480,11 +509,18 @@
             <div class="content fourth-content">
                 <div class="container-fluid">
                     <div style="margin-bottom: 25px" class="title">
-                        <h2>My Certifications</h2>
+                        <h2 style="color: #fff;font-family: Open Sans, sans-serif;font-size: 24px;text-transform: uppercase;font-weight: 700;color: #fff;letter-spacing: 0.5px;padding-top: 20px">My Portfolio</h2>
+                        <hr>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="filterSelection('all')">All</button>
+                        <button onclick="filterSelection('certificate')">Certifications</button>
+                        <button onclick="filterSelection('project')">Projects</button>
+                        <button onclick="filterSelection('badge')">Badges</button>
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item certificate">
                                 <div class="thumb">
                                     <a href="img/img1.jpeg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -499,7 +535,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item certificate">
                                 <div class="thumb">
                                     <a href="img/img2.jpeg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -514,7 +550,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item certificate">
                                 <div class="thumb">
                                     <a href="img/img3.jpeg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -529,7 +565,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item certificate">
                                 <div class="thumb">
                                     <a href="img/img4.jpeg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -544,7 +580,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item certificate">
                                 <div class="thumb">
                                     <a href="img/img5.jpeg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -559,7 +595,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item project">
                                 <div class="thumb">
                                     <a href="img/img6.jpeg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -574,7 +610,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item project">
                                 <div class="thumb">
                                     <a href="img/img7.jpg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -589,7 +625,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item project">
                                 <div class="thumb">
                                     <a href="img/img8.jpg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -604,7 +640,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <div class="item">
+                            <div class="item project">
                                 <div class="thumb">
                                     <a href="img/img9.jpg" data-lightbox="image-1"><div class="hover-effect">
                                         <div class="hover-content">
@@ -775,6 +811,23 @@
             log: function() { }
         };
     }
+    </script>
+
+    <script>
+        function filterSelection(category) {
+            let items = document.querySelectorAll('.item');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            setTimeout(() => {
+                document.querySelector('.portfolio').style.display = 'grid';
+            }, 400);
+        }
     </script>
 </body>
 
